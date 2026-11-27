@@ -1,0 +1,217 @@
+as_of_utc	host	activity	metric	unit	value	deduction	net	measurement	first_observed_utc	last_observed_utc	basis
+2026-11-27T05:10:00Z	WSL	Theorem 2.4 audit first run	queue	s	327.1			measured			Same input as ECS Theorem 2.4 audit
+2026-11-27T05:10:00Z	WSL	Theorem 2.4 audit first run	execution	s	149.3			measured			Successful audit
+2026-11-27T05:10:00Z	WSL	Theorem 2.4 audit second run	queue	s	1227.3			measured			Same input as first run
+2026-11-27T05:10:00Z	WSL	Theorem 2.4 audit second run	execution	s	269.6			measured			Successful audit
+2026-11-27T05:10:00Z	ECS	Theorem 2.4 audit	queue	s	0.0009			measured			Matched input and dependency trace
+2026-11-27T05:10:00Z	ECS	Theorem 2.4 audit	execution	s	152.3			measured			Successful audit
+2026-11-27T05:10:00Z	WSL	Construction 2.5 audit	queue	s	7262			measured			Same input as ECS Construction 2.5 audit
+2026-11-27T05:10:00Z	WSL	Construction 2.5 audit	execution	s	273			measured			Successful audit
+2026-11-27T05:10:00Z	ECS	Construction 2.5 audit	queue	s	0.001			measured			Matched input
+2026-11-27T05:10:00Z	ECS	Construction 2.5 audit	execution	s	151.42			measured			Successful audit
+2026-11-27T05:10:00Z	WSL	Host capacity	logical_cpus	CPUs	16			measured			Configured
+2026-11-27T05:10:00Z	WSL	Host capacity	guest_memory	KiB	24170140			measured			Operating system reading
+2026-11-27T05:10:00Z	ECS	Host capacity	virtual_cpus	vCPUs	32			measured			Instance configuration
+2026-11-27T05:10:00Z	ECS	Host capacity	memory	GiB	128			measured			Nominal instance configuration
+2026-11-27T05:10:00Z	WSL	Theorem 2.4 kernel	memory_reservation	GiB	16			measured			Admission budget for the local kernel
+2026-11-27T05:10:00Z	WSL	Admission backlog	deliveries	count	19			measured			Pending deliveries during Theorem 2.4 reservation
+2026-11-27T05:10:00Z	WSL	Admission backlog	modules	count	37			measured			Modules awaiting full audit
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	accepted_deliveries	count	0			measured	2026-11-26T07:00:00Z	2026-11-26T08:00:00Z	Hourly Lean deliveries accepted
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	accepted_deliveries	count	9			measured	2026-11-26T08:00:00Z	2026-11-26T09:00:00Z	Hourly Lean deliveries accepted
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	accepted_deliveries	count	20			measured	2026-11-26T12:00:00Z	2026-11-26T13:00:00Z	Hourly Lean deliveries accepted
+2026-11-27T05:10:00Z	ECS	Official replay window	median_host_busy	percent	16.1			measured	2026-11-26T20:10:00Z	2026-11-26T20:24:00Z	14 minute samples with five single-core checker processes
+2026-11-27T05:10:00Z	ECS	Concurrent audit window	median_host_busy	percent	46.3			measured	2026-11-26T20:34:00Z	2026-11-26T20:51:00Z	17 minute samples with additional independent audits
+2026-11-27T05:10:00Z	ECS	Concurrent audit window	completed_audits	modules	22			measured	2026-11-26T20:34:00Z	2026-11-26T20:51:00Z	Completed during the window
+2026-11-27T05:26:16.367Z	ECS	Release verification and reporting	cold_build_modules	modules	388			measured	2026-11-27T05:14:43.131Z	2026-11-27T05:26:16.367Z	Completed public candidate build
+2026-11-27T05:26:16.367Z	ECS	Release verification and reporting	cold_build_elapsed	s	693.236			measured	2026-11-27T05:14:43.131Z	2026-11-27T05:26:16.367Z	Completed public candidate build
+2026-11-27T05:27:39Z	ECS	Release verification and reporting	cold_build_service_cpu	CPU s	3453.346817			measured			Terminal service counter includes individual compiler processes
+2026-11-27T06:12:07.199Z	ECS	Theorem 1.1 official replay	cores_in_use	cores	0.9973742671862186			measured	2026-11-27T06:12:03.199Z	2026-11-27T06:12:07.199Z	Four-second process sample
+2026-11-27T06:12:07.199Z	ECS	Theorem 1.1 NanoDa	cores_in_use	cores	15.960487959859663			measured	2026-11-27T06:12:03.199Z	2026-11-27T06:12:07.199Z	Four-second process sample on the identical solution export with 16 checker threads
+2026-11-27T05:10:00Z	WSL	Dependency audits	timed_runs	jobs	367			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Dependency audits	queue_p50	s	48.01			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Dependency audits	execution_p50	s	76.18			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Dependency audits	execution_p95	s	256.65			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Dependency audits	rss_p50	KiB	11573276			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Dependency audits	rss_p95	KiB	15528559			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	timed_runs	jobs	522			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	queue_p50	s	168.69			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	execution_p50	s	29.07			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	execution_p95	s	138.4			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	rss_p50	KiB	12422572			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Native dependency audits	rss_p95	KiB	17309103			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	timed_runs	jobs	9			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	queue_p50	s	0.81			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	execution_p50	s	3.8			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	execution_p95	s	9.34			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	rss_p50	KiB	3388276			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Formal compilations	rss_p95	KiB	12069750			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	timed_runs	jobs	660			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	queue_p50	s	16.65			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	execution_p50	s	18.3			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	execution_p95	s	120.35			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	rss_p50	KiB	4079270			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	ECS	Trial compilations	rss_p95	KiB	11660574			measured			Distribution in the base timing ledger
+2026-11-27T05:10:00Z	WSL	Admission backlog	pool	KiB	19975836			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	WSL	Admission backlog	budget_available	KiB	3198620			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	WSL	Construction 2.5 audit	peak_rss	GiB	12.21			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	matched_deliveries	deliveries	226			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	delivery_to_accept_p50	s	1380			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	delivery_to_accept_p95	s	12345			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Initial installation	disk_capacity	GiB	500			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Theorem 2.4 exports and configuration	disk	GB	8.8			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Official transfer example	sent	bytes	1088438977			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Audit traversal comparison	previous_algorithm_elapsed	s	146.6			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Audit traversal comparison	changed_algorithm_elapsed	s	55.0			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Audit width comparison	four_threads_elapsed	s	9.36			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Audit width comparison	eight_threads_elapsed	s	9.57			measured			Base ledger or matched resource observation
+2026-11-27T05:10:00Z	ECS	Initial installation	disk_used	GiB	60			estimate			Approximate footprint of toolchain, dependencies and first export
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	pending_at_end	deliveries	25			measured	2026-11-26T07:00:00Z	2026-11-26T08:00:00Z	Matched delivery and acceptance events in the hourly window
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	oldest_pending_seconds	s	11354			measured	2026-11-26T07:00:00Z	2026-11-26T08:00:00Z	Matched delivery and acceptance events in the hourly window
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	delivery_to_accept_p50	s	13175			measured	2026-11-26T08:00:00Z	2026-11-26T09:00:00Z	Matched delivery and acceptance events in the hourly window
+2026-11-27T05:10:00Z	WSL	Acceptance throughput	delivery_to_accept_p50	s	250			measured	2026-11-26T12:00:00Z	2026-11-26T13:00:00Z	Matched delivery and acceptance events in the hourly window
+2026-11-27T08:33:07.671Z	Project	Elapsed time	elapsed_lower_bound	s	149214.671	13128.046649	136086.624351	bound	2026-11-25T15:06:13.000Z	2026-11-27T08:33:07.671Z	Earliest project-specific record to local receipt of the seventh target
+2026-11-27T08:33:07.671Z	Project	Elapsed time	elapsed_upper_bound	s	149214.671	0	149214.671	bound	2026-11-25T15:06:13.000Z	2026-11-27T08:33:07.671Z	Earliest project-specific record to local receipt of the seventh target
+2026-11-27T08:33:07.671Z	Project	Quota interruption	worker_interval_union	s	14774			reconstructed interval	2026-11-26T00:42:21.000Z	2026-11-26T04:48:35.000Z	Four worker intervals unioned across seats. Untimed productive work may fill the residual.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	concurrent_productive_work	s	1645.953351			reconstructed interval	2026-11-26T00:42:21.000Z	2026-11-26T04:48:35.000Z	Four worker intervals unioned across seats. Untimed productive work may fill the residual.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	stall_lower_bound	s	0			bound	2026-11-26T00:42:21.000Z	2026-11-26T04:48:35.000Z	Four worker intervals unioned across seats. Untimed productive work may fill the residual.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	stall_upper_bound	s	13128.046649			bound	2026-11-26T00:42:21.000Z	2026-11-26T04:48:35.000Z	Four worker intervals unioned across seats. Untimed productive work may fill the residual.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	quota_exits	exits	485			measured	2026-11-26T00:42:21.000Z	2026-11-26T04:48:35.000Z	Four worker intervals unioned across seats. Untimed productive work may fill the residual.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	worker_outage	s	14432			reconstructed interval	2026-11-26T00:42:26.000Z	2026-11-26T04:42:58.000Z	One worker, from quota exit to next productive run. Overlapping intervals.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	worker_outage	s	14769			reconstructed interval	2026-11-26T00:42:26.000Z	2026-11-26T04:48:35.000Z	One worker, from quota exit to next productive run. Overlapping intervals.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	worker_outage	s	14718			reconstructed interval	2026-11-26T00:42:47.000Z	2026-11-26T04:48:05.000Z	One worker, from quota exit to next productive run. Overlapping intervals.
+2026-11-27T08:33:07.671Z	Project	Quota interruption	worker_outage	s	14714			reconstructed interval	2026-11-26T00:42:21.000Z	2026-11-26T04:47:35.000Z	One worker, from quota exit to next productive run. Overlapping intervals.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	input	tokens	738698437			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	cached_input	tokens	731792384			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	uncached_input	tokens	6906053			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	output	tokens	1977067			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	reasoning_output	tokens	750628			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Shared or unassigned	observed_total	tokens	740675504			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	input	tokens	3682277004			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	cached_input	tokens	3638835712			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	uncached_input	tokens	43441292			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	output	tokens	9093687			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	reasoning_output	tokens	2959902			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Formalization	observed_total	tokens	3691370691			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	input	tokens	39824206			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	cached_input	tokens	38640384			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	uncached_input	tokens	1183822			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	output	tokens	169344			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	reasoning_output	tokens	34878			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Final independent review	observed_total	tokens	39993550			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	input	tokens	186901630			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	cached_input	tokens	184982528			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	uncached_input	tokens	1919102			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	output	tokens	458777			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	reasoning_output	tokens	135162			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	Release verification and reporting	observed_total	tokens	187360407			measured			One cumulative return per session. Cached input and reasoning output are nested.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	input_tokens	tokens	4647701277			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	cached_input_tokens	tokens	4594251008			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	output_tokens	tokens	11698875			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	reasoning_output_tokens	tokens	3880570			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	uncached_input_tokens	tokens	53450269			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	All recorded phases	covered_total	tokens	4659400152			measured			Sum across session categories. Covered total is input plus output.
+2026-11-27T08:33:07.671Z	Model service	Usage coverage	identified_sessions	sessions	790			measured			Post-receipt archive filtered at event time. Positive cumulative returns counted once.
+2026-11-27T08:33:07.671Z	Model service	Usage coverage	sessions_with_counters	sessions	287			measured			Post-receipt archive filtered at event time. Positive cumulative returns counted once.
+2026-11-27T08:33:07.671Z	Model service	Usage coverage	sessions_without_positive_counters	sessions	503			measured			Post-receipt archive filtered at event time. Positive cumulative returns counted once.
+2026-11-27T08:33:07.671Z	Model service	Usage coverage	failed_turns	turns	485			measured			Post-receipt archive filtered at event time. Positive cumulative returns counted once.
+2026-11-27T08:33:07.671Z	Model service	Usage coverage	failed_turns_with_usage	turns	0			measured			Post-receipt archive filtered at event time. Positive cumulative returns counted once.
+2026-11-27T08:33:07.671Z	WSL	Formalization reconstruction	prior_subtotal	CPU s	2374.179529			measured			Recovered compiler records and overlap constraints against already counted groups.
+2026-11-27T08:33:07.671Z	WSL	Formalization reconstruction	identified_increment	CPU s	1184.5			measured			Recovered compiler records and overlap constraints against already counted groups.
+2026-11-27T08:33:07.671Z	WSL	Formalization reconstruction	possibly_overlapping_children	CPU s	3712.692218			measured			Recovered compiler records and overlap constraints against already counted groups.
+2026-11-27T08:33:07.671Z	WSL	Formalization reconstruction	maximum_possible_overlap	CPU s	2739.617583			bound			Recovered compiler records and overlap constraints against already counted groups.
+2026-11-27T08:33:07.671Z	WSL	Formalization reconstruction	minimum_new_child_cpu	CPU s	973.074635			bound			Recovered compiler records and overlap constraints against already counted groups.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	public_trace_cpu	CPU s	17.581217			measured	2026-11-27T05:50:50.279Z	2026-11-27T05:51:08.008Z	Standalone verifier, self and joined children. Included once in release verification.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	target_witness_cpu	CPU s	4.722742			measured	2026-11-27T05:55:08.697Z	2026-11-27T05:55:09.518Z	Standalone verifier, self and joined children. Included once in release verification.
+2026-11-27T08:33:07.671Z	WSL	Formalization	project_cpu	CPU s	4531.754164	0	4531.754164	lower bound	2026-11-26T07:02:03.197Z	2026-11-26T15:54:32.169Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	WSL	Final independent review	project_cpu	CPU s	13228.464958	9207.8	4020.664958	lower bound	2026-11-26T09:27:41.000Z	2026-11-27T05:16:16.509Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	WSL	Release verification and reporting	project_cpu	CPU s	99.732442	0	99.732442	lower bound	2026-11-27T05:09:06.707Z	2026-11-27T07:49:01.150Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	WSL	Shared or unassigned	project_cpu	CPU s	391.617437	0	391.617437	lower bound		2026-11-26T10:06:39.731Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	WSL	All recorded phases	covered_cpu	CPU s	18251.569001	9207.8	9043.769001	lower bound			Sum of four project_cpu rows through receipt.
+2026-11-27T08:33:07.671Z	ECS	Formalization	project_cpu	CPU s	37100.61	0	37100.61	lower bound	2026-11-26T18:22:10.642Z	2026-11-27T05:14:04.897Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	project_cpu	CPU s	355401.910109	0	355401.910109	lower bound	2026-11-26T09:47:39.000Z	2026-11-27T08:32:59.057Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	project_cpu	CPU s	12182.450776	0	12182.450776	lower bound	2026-11-26T18:12:05.782Z	2026-11-27T07:57:06.433Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	ECS	Shared or unassigned	project_cpu	CPU s	1220.3487	0	1220.3487	lower bound	2026-11-26T18:04:01.448Z	2026-11-27T08:32:03.748Z	Additive phase row through receipt, identified jobs and nonoverlapping reconstructed CPU.
+2026-11-27T08:33:07.671Z	ECS	All recorded phases	covered_cpu	CPU s	405905.319585	0	405905.319585	lower bound			Sum of four project_cpu rows through receipt.
+2026-11-27T05:44:19.451Z	ECS	Final independent review	superseded_default_service_cpu	CPU s	32916.097359			measured		2026-11-27T05:44:19.451Z	Invocation lifetime through retirement, includes its checker and comparator. Final service closes after receipt.
+2026-11-27T08:33:18.369Z	ECS	Final independent review	final_default_service_cpu	CPU s	10878.990583			measured		2026-11-27T08:33:18.369Z	Invocation lifetime through retirement, includes its checker and comparator. Final service closes after receipt.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	final_default_service_cpu_through_receipt	CPU s	10804.358691			lower bound	2026-11-27T05:31:55.000Z	2026-11-27T08:32:03.748Z	Last service observation at or before receipt. Included in the strict receipt-time subtotal.
+2026-11-27T08:33:18.369Z	ECS	Final independent review	final_default_service_reconciliation	CPU s	74.631892			measured	2026-11-27T08:32:03.748Z	2026-11-27T08:33:18.369Z	Terminal service counter less the reading included at receipt. Observation interval straddles receipt.
+2026-11-27T08:33:18.369Z	ECS	Final independent review	final_review_including_teardown	CPU s	355476.542001	0	355476.542001	lower bound			Same receipt population after retiring the last independent-review service.
+2026-11-27T08:33:18.369Z	ECS	All recorded phases	covered_cpu_including_teardown	CPU s	405979.951477	0	405979.951477	lower bound			Receipt population with the final default service advanced to terminal CPU.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_elapsed	s	2138.152848			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:43:52.422Z	Completed checker wall time.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_process_cpu	CPU s	28402.9			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:43:52.422Z	Contained in the NanoDa service counter.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_service_cpu	CPU s	28419.612288			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:44:00.564Z	Charged once in independent review.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_process_peak	KiB	71047428			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:43:52.422Z	Native peak RSS.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_service_peak	bytes	75161927680			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:44:00.564Z	Whole service peak memory.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	nanoda_checked_declarations	declarations	297335			measured	2026-11-27T06:08:14.269Z	2026-11-27T06:43:52.422Z	Checker finished with zero type errors and one axiom-list printing error.
+2026-11-27T08:33:18.369Z	ECS	Final independent review	default_kernel_wall_observed	s	10140.955211			lower bound	2026-11-27T05:44:12.761Z	2026-11-27T08:33:18.369Z	Final solution checker only, observed through stop. Completion time unknown.
+2026-11-27T08:33:18.369Z	ECS	Final independent review	default_kernel_cpu_observed	CPU s	10138.57			lower bound	2026-11-27T05:44:12.761Z	2026-11-27T08:33:18.369Z	Final solution checker only, observed through stop. Completion time unknown.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	spec_export_reuse_wall	s	12.925			measured			Final replay log, time spent obtaining a previously produced export. Separate from kernel timing.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	solution_export_reuse_wall	s	14.861			measured			Final replay log, time spent obtaining a previously produced export. Separate from kernel timing.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	service_start_to_default_kernel	s	737.761421			estimate			Whole service start to approximate checker process start. Includes export retrieval and comparator setup.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	statement_comparison_only	s				missing			Independent boundaries for this component of the final service were unavailable.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	comparator_queue_only	s				missing			Independent boundaries for this component of the final service were unavailable.
+2026-11-27T08:33:07.671Z	ECS	After NanoDa completed	sampled_busy_cores	cores	2.169417			measured	2026-11-27T06:44:08.002Z	2026-11-27T08:32:03.748Z	Average used cores across the whole host over valid sampled pairs through receipt. Includes overlapping release work.
+2026-11-27T08:33:07.671Z	ECS	After NanoDa completed	sampled_wall	s	6475.745706			measured	2026-11-27T06:44:08.002Z	2026-11-27T08:32:03.748Z	Same-boot pairs at most 120 seconds apart.
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-27T04:11:11.414Z	lemma-2-1 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-26T21:59:55.721Z	theorem-2-4 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-26T23:31:50.063Z	construction-2-5 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-26T11:21:09.220Z	lemma-2-6 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-27T05:36:46.558Z	proposition-1-5 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-27T08:32:32.720Z	theorem-1-1 / official statement and permitted axioms, same-export NanoDa
+2026-11-27T08:33:07.671Z	Project	Independent receipts	accepted_target	target	1			measured		2026-11-27T04:00:24.926Z	lemma-2-2 / official comparator and default kernel
+2026-11-27T08:33:07.671Z	WSL	Host context	host_raw	CPU s	837845.49			estimate	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	host_deduction	CPU s	9207.8			estimate	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	host_net	CPU s	828637.69			estimate	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	conditional_net_busy_floor	CPU s	817389.67			estimate	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	unsampled_elapsed	s	8709.876638			measured	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	mixed_proxy_net	CPU s	280996.38			estimate	2026-11-25T17:27:15.949Z	2026-11-27T08:33:01.835Z	Whole-host sampled context. Early samples include I/O wait. Overlaps project job totals.
+2026-11-27T08:33:07.671Z	WSL	Host context	host_busy	CPU s	225686.58			measured	2026-11-26T17:49:14.105Z	2026-11-27T08:33:01.356Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	WSL	Host context	host_idle	CPU s	624996.53			measured	2026-11-26T17:49:14.105Z	2026-11-27T08:33:01.356Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	WSL	Host context	host_iowait	CPU s	122.89			measured	2026-11-26T17:49:14.105Z	2026-11-27T08:33:01.356Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	ECS	Host context	host_busy	CPU s	309660.72			measured	2026-11-26T17:59:03.137Z	2026-11-27T08:32:03.748Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	ECS	Host context	host_idle	CPU s	1364759.86			measured	2026-11-26T17:59:03.137Z	2026-11-27T08:32:03.748Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	ECS	Host context	host_iowait	CPU s	436.43			measured	2026-11-26T17:59:03.137Z	2026-11-27T08:32:03.748Z	Boot- and clock-matched host tick differences across vCPUs. Overlaps jobs.
+2026-11-27T08:33:07.671Z	ECS	Billing	billing_start	UTC				missing			Provider invoice pending
+2026-11-27T08:33:07.671Z	ECS	Billing	billing_end	UTC				missing			Provider invoice pending
+2026-11-27T08:33:07.671Z	ECS	Billing	billed_duration	instance h				missing			No provider billing period
+2026-11-27T08:33:07.671Z	ECS	Billing	effective_rate	currency/instance h				missing			Provider invoice pending
+2026-11-27T08:33:07.671Z	ECS	Billing	discount	currency				missing			Provider invoice pending
+2026-11-27T08:33:07.671Z	ECS	Billing	currency	ISO 4217				missing			Provider invoice pending
+2026-11-27T08:33:07.671Z	ECS	Billing	amount	currency				missing			No invoice, currency, effective rate or discount
+2026-11-27T08:33:07.671Z	ECS	Billing	fully_idle_duration	h				missing			Incomplete whole-instance telemetry
+2026-11-27T08:33:07.671Z	WSL	Billing	electricity	kWh				missing			No local electricity meter or tariff
+2026-11-27T08:33:07.671Z	WSL	Billing	electricity_rate	currency/kWh				missing			No local electricity meter or tariff
+2026-11-27T08:33:07.671Z	Project	Shared or unassigned	observed_activity_union	s	6286.454			reconstructed interval	2026-11-26T12:09:09.484Z	2026-11-27T08:32:03.748Z	Timed executions, delivered workers and services across both hosts. Includes waiting and known straddling runs up to receipt. Phases overlap.
+2026-11-27T08:33:07.671Z	Project	Release verification and reporting	observed_activity_union	s	12463.987			reconstructed interval	2026-11-26T18:12:05.782Z	2026-11-27T08:33:07.671Z	Timed executions, delivered workers and services across both hosts. Includes waiting and known straddling runs up to receipt. Phases overlap.
+2026-11-27T08:33:07.671Z	Project	Formalization	observed_activity_union	s	84477.915001			reconstructed interval	2026-11-25T15:37:17.000Z	2026-11-27T05:14:04.897Z	Timed executions, delivered workers and services across both hosts. Includes waiting and known straddling runs up to receipt. Phases overlap.
+2026-11-27T08:33:07.671Z	Project	Final independent review	observed_activity_union	s	86856.307			reconstructed interval	2026-11-25T16:38:12.000Z	2026-11-27T08:33:07.671Z	Timed executions, delivered workers and services across both hosts. Includes waiting and known straddling runs up to receipt. Phases overlap.
+2026-11-27T08:33:07.671Z	Project	All recorded phases	observed_activity_union	s	133592.076001			reconstructed interval			Union across the four sets of observed phase intervals, including service waits.
+2026-11-27T08:33:07.671Z	Project	Review and release	overlapping_activity	s	12463.987			reconstructed interval			Intersection of recorded review and release activity across both hosts.
+2026-11-27T08:33:07.671Z	ECS	Coverage gap	missing_native_cpu	jobs	478			measured			Native CPU absent for audit. Wrapper-only CPU excluded.
+2026-11-27T08:33:07.671Z	ECS	Coverage gap	missing_native_cpu	jobs	1072			measured			Native CPU absent for profile. Wrapper-only CPU excluded.
+2026-11-27T08:33:07.671Z	ECS	Coverage gap	missing_native_cpu	jobs	2			measured			Native CPU absent for metadata. Wrapper-only CPU excluded.
+2026-11-27T08:33:07.671Z	ECS	Coverage gap	missing_native_cpu	jobs	1			measured			Native CPU absent for formal compile. Wrapper-only CPU excluded.
+2026-11-27T08:33:07.671Z	WSL	Compile attempts	retryRows	count	51			measured			Retry and cache records. First-attempt CPU participates in overlap reconstruction.
+2026-11-27T08:33:07.671Z	WSL	Compile attempts	retryFailures	count	44			measured			Retry and cache records. First-attempt CPU participates in overlap reconstruction.
+2026-11-27T08:33:07.671Z	WSL	Compile attempts	firstKnownCPU	CPU s	3245.75			measured			Retry and cache records. First-attempt CPU participates in overlap reconstruction.
+2026-11-27T08:33:07.671Z	WSL	Compile attempts	cacheHits	count	450			measured			Retry and cache records. First-attempt CPU participates in overlap reconstruction.
+2026-11-27T08:33:07.671Z	WSL	Compile attempts	profileRows	count	740			measured			Retry and cache records. First-attempt CPU participates in overlap reconstruction.
+2026-11-27T08:33:07.671Z	ECS	Formalization	failed_executions_with_timing	executions	349			measured			Nonzero exit in timed executions, including module attempts. Failed work retains its phase.
+2026-11-27T08:33:07.671Z	ECS	Final independent review	failed_executions_with_timing	executions	2			measured			Nonzero exit in timed executions, including module attempts. Failed work retains its phase.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	failed_executions_with_timing	executions	21			measured			Nonzero exit in timed executions, including module attempts. Failed work retains its phase.
+2026-11-27T08:33:07.671Z	ECS	Shared or unassigned	failed_executions_with_timing	executions	1			measured			Nonzero exit in timed executions, including module attempts. Failed work retains its phase.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	public_unique_compiler_attempts	jobs	388			measured			Unique module/start/finish tuples across attempt and successful-compile records. Included in the build service.
+2026-11-27T08:33:07.671Z	ECS	Release verification and reporting	public_compiler_cpu	CPU s	3199.17			measured			Unique module/start/finish tuples across attempt and successful-compile records. Included in the build service.
+2026-11-27T08:42:00.000Z	ECS	Release work observed after receipt	post_receipt_reporting_cpu	CPU s	19.91			measured	2026-11-27T08:39:06.068Z	2026-11-27T08:41:31.352Z	Completed by the separate publication checkpoint. Straddling jobs have no CPU split at receipt. Excluded from receipt totals.
+2026-11-27T08:42:00.000Z	ECS	Release work observed after receipt	post_receipt_reporting_jobs	jobs	5			measured	2026-11-27T08:39:06.068Z	2026-11-27T08:41:31.352Z	Completed by the separate publication checkpoint. Straddling jobs have no CPU split at receipt. Excluded from receipt totals.
+2026-11-27T08:42:00.000Z	ECS	Release work observed after receipt	straddling_reporting_cpu	CPU s	3280.67			measured	2026-11-27T07:46:08.894Z	2026-11-27T08:40:36.881Z	Completed by the separate publication checkpoint. Straddling jobs have no CPU split at receipt. Excluded from receipt totals.
+2026-11-27T08:42:00.000Z	ECS	Release work observed after receipt	straddling_reporting_jobs	jobs	1			measured	2026-11-27T07:46:08.894Z	2026-11-27T08:40:36.881Z	Completed by the separate publication checkpoint. Straddling jobs have no CPU split at receipt. Excluded from receipt totals.
+2026-11-27T08:42:00.000Z	Project	Release work observed after receipt	final_package_verification_cpu	CPU s				missing			Final total unavailable at publication accounting checkpoint.
+2026-11-27T08:42:00.000Z	Project	Release work observed after receipt	final_private_archive_cpu	CPU s				missing			Final total unavailable at publication accounting checkpoint.
+2026-11-27T08:42:00.000Z	Project	Release work observed after receipt	future_report_cpu	CPU s				missing			Final total unavailable at publication accounting checkpoint.
+2026-11-27T08:42:00.000Z	WSL	Evidence retention	checkpoint_time	UTC	2026-11-27T08:35:32.556Z			measured			Post-receipt private evidence capture timestamp, before completed release packaging.
+2026-11-27T08:42:00.000Z	ECS	Evidence retention	checkpoint_time	UTC	2026-11-27T08:35:35.606Z			measured			Post-receipt private evidence capture timestamp, before completed release packaging.
+2026-11-27T08:42:00.000Z	WSL	Evidence retention	prior_private_archive_time	UTC	2026-11-26T18:39:30.751Z			measured			Earlier private archive manifest.
+2026-11-27T08:42:00.000Z	WSL	Release work observed after receipt	verified_preview_bundle	bytes	866358205			measured		2026-11-27T08:40:48.619Z	Git bundle verification of a seven-receipt preview. Separate from final public-package verification. CPU unmetered.
+2026-11-27T08:33:07.671Z	ECS	Host context	observed_same_boot_span	h	14.55017			lower bound	2026-11-26T17:59:03.137Z	2026-11-27T08:32:03.748Z	Same guest boot at both ends. Earlier project service records extend beyond this matched-counter window. Bill pending.

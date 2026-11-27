@@ -1,0 +1,132 @@
+import Lean
+
+open Lean
+
+/-- The kernel also uses the constructors and reduction rules of inductive declarations. -/
+def dependencies (info : ConstantInfo) : NameSet := Id.run do
+  let refs := info.getUsedConstantsAsSet
+  match info with
+  | .inductInfo v => return refs ++ NameSet.ofList v.all
+  | .ctorInfo v => return refs.insert v.induct
+  | .recInfo v =>
+    return v.rules.foldl (init := refs) fun acc rule =>
+      (acc.insert rule.ctor) ++ rule.rhs.getUsedConstantsAsSet
+  | _ => return refs
+
+/-- Keep names in Lean's native representation, including private and numeric components.
+    The public JSON gives the printed name together with its declaring module. -/
+def resolveSeeds (env : Environment) (file : String) : IO (Array Name) := do
+  let mut groups : Std.HashMap Name (Std.HashSet String) := {}
+  let mut order : Array (Name × String) := #[]
+  for line in (← IO.FS.readFile file).splitOn "\n" do
+    unless line.isEmpty do
+      let [m, n] := line.splitOn "\t" | throw (IO.userError "malformed seed row")
+      let mod := m.toName
+      order := order.push (mod,n)
+      groups := groups.insert mod ((groups.getD mod {}).insert n)
+  let mut resolved : Std.HashMap (Name × String) Name := {}
+  for (mod, wanted) in groups do
+    let some idx := env.getModuleIdx? mod | throw (IO.userError s!"missing module {mod}")
+    let mut found : Std.HashSet String := {}
+    for n in env.header.moduleData[idx.toNat]!.constNames do
+      let label := n.toString
+      if wanted.contains label then
+        unless env.getModuleIdxFor? n == some idx && !found.contains label do
+          throw (IO.userError s!"ambiguous or misattributed declaration {mod} / {label}")
+        found := found.insert label
+        resolved := resolved.insert (mod,label) n
+    unless found.size == wanted.size do
+      for n in wanted do
+        unless found.contains n do throw (IO.userError s!"{mod} does not own {n}")
+  if order.isEmpty then throw (IO.userError "empty seed set")
+  return order.map (fun key => resolved[key]!)
+
+structure Entry where
+  line : String
+  edges : Array Name
+
+/-- One cache per imported environment. The caller checks each resulting stream's digest. -/
+abbrev EdgeCache := Std.HashMap Name Entry
+
+def walk (env : Environment) (seeds output : String) (cache : EdgeCache) : IO EdgeCache := do
+  let mut queue ← resolveSeeds env seeds
+  let mut seen := Std.HashSet.ofList queue.toList
+  let handle ← IO.FS.Handle.mk output .write
+  let mut cache := cache
+  let mut i := 0
+  while i < queue.size do
+    let n := queue[i]!
+    i := i + 1
+    let entry ← match cache[n]? with
+      | some entry => pure entry
+      | none => do
+        let some info := env.find? n | throw (IO.userError s!"missing declaration {n}")
+        let m := (env.getModuleIdxFor? n).map fun j => env.header.moduleNames[j.toNat]!.toString
+        pure ⟨(Json.arr #[toJson m, toJson n.toString]).compress, (dependencies info).toArray⟩
+    unless cache.contains n do cache := cache.insert n entry
+    handle.putStrLn entry.line
+    for dep in entry.edges do
+      unless seen.contains dep do
+        seen := seen.insert dep
+        queue := queue.push dep
+  handle.flush
+  return cache
+
+/-- String and numeric components remain distinguishable even in generated names. -/
+def components : Name → Array Json
+  | .anonymous => #[]
+  | .str p s => (components p).push (toJson s)
+  | .num p n => (components p).push (toJson n)
+
+/-- A generated name may occur in several module tables. Save just those reached names. -/
+def writeAmbiguous (env : Environment) (reached : EdgeCache) (output : String) : IO Unit := do
+  let file ← IO.FS.Handle.mk output .write
+  let mut written : Std.HashSet Name := {}
+  for i in [:env.header.moduleData.size] do
+    for n in env.header.moduleData[i]!.constNames do
+      if reached.contains n && !written.contains n then
+        if let some j := env.getModuleIdxFor? n then
+          if j.toNat != i then
+            written := written.insert n
+            file.putStrLn (Json.arr (components n)).compress
+  file.flush
+
+/-- Resolve the ambiguous names under precisely one witness's imports. -/
+def owners (imports seeds input output : String) : IO Unit := do
+  let mods := (← IO.FS.readFile imports).splitOn "\n" |>.filter (!·.isEmpty)
+  let env ← importModules (mods.toArray.map fun m => {module := m.toName}) {} (level := .private)
+  let _ ← resolveSeeds env seeds
+  let file ← IO.FS.Handle.mk output .write
+  for line in (← IO.FS.readFile input).splitOn "\n" do
+    unless line.isEmpty do
+      let parts ← IO.ofExcept ((Json.parse line).bind Json.getArr?)
+      let mut n := Name.anonymous
+      for p in parts do
+        if let .str s := p then n := .str n s else n := .num n (← IO.ofExcept p.getNat?)
+      if let some idx := env.getModuleIdxFor? n then
+        let m := env.header.moduleNames[idx.toNat]!.toString
+        file.putStrLn (Json.arr #[toJson m,toJson n.toString]).compress
+  file.flush
+
+/-- Each plan row lists the seed, import, and output files for one independent route. -/
+def batchWalk (plan ambiguous : String) : IO Unit := do
+  let mut modules : Array Name := #[]
+  let mut jobs : Array (String × String) := #[]
+  for line in (← IO.FS.readFile plan).splitOn "\n" do
+    unless line.isEmpty do
+      let [seeds, imports, output] := line.splitOn "\t" | throw (IO.userError "bad plan row")
+      jobs := jobs.push (seeds,output)
+      for m in (← IO.FS.readFile imports).splitOn "\n" do
+        unless m.isEmpty || modules.contains m.toName do modules := modules.push m.toName
+  let env ← importModules (modules.map fun m => {module := m}) {} (level := .private)
+  let mut cache : EdgeCache := {}
+  for (seeds,output) in jobs do
+    cache ← walk env seeds output cache
+  if jobs.size > 1 then writeAmbiguous env cache ambiguous
+
+def main (args : List String) : IO Unit := do
+  initSearchPath (← findSysroot)
+  match args with
+  | ["walk", plan, ambiguous] => batchWalk plan ambiguous
+  | ["owners", imports, seeds, input, output] => owners imports seeds input output
+  | _ => throw (IO.userError "expected walk PLAN AMBIGUOUS or owners IMPORTS SEEDS AMBIGUOUS OUTPUT")

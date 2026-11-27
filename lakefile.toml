@@ -1,0 +1,12 @@
+name = "WeilII"
+version = "0.1.0"
+defaultTargets = ["WeilII"]
+
+[[require]]
+name = "weil-conjectures"
+git = "https://github.com/formal-arithmetic-geometry/weil-conjectures.git"
+rev = "497f33d964609973fe4ed9647a1e5d32369f0d09"
+
+[[lean_lib]]
+name = "WeilII"
+globs = ["WeilII.*"]
